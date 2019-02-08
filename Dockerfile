@@ -5,6 +5,7 @@ MAINTAINER Thibault Payet "mailoo.org"
 # Install.
 RUN apt-get update -q -y
 
+RUN atp-get install -qq -y apt-utils
 RUN apt-get install -qq -y cmake
 RUN apt-get install -q -y git
 RUN apt-get install -qq -y ninja-build
@@ -25,8 +26,6 @@ RUN apt-get install -q -y libgl1-mesa-glx
 RUN apt-get install -q -y libgl1-mesa-dri
 RUN apt-get install -q -y libegl1-mesa-dev
 RUN apt-get install -q -y libgles2-mesa-dev
-RUN apt-get install -q -y gcov
-RUN apt-get install -q -y lcov
 RUN apt-get install -q -y libopencv-dev
 
 RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cmake . -GNinja -DGLM_TEST_ENABLE=OFF && ninja && ninja install && cd ..
