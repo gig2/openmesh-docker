@@ -5,7 +5,7 @@ MAINTAINER Thibault Payet "mailoo.org"
 # Install.
 RUN apt-get update -q -y
 
-RUN atp-get install -qq -y apt-utils
+RUN apt-get install -qq -y apt-utils
 RUN apt-get install -qq -y cmake
 RUN apt-get install -q -y git
 RUN apt-get install -qq -y ninja-build
@@ -31,3 +31,11 @@ RUN apt-get install -q -y libopencv-dev
 RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cmake . -GNinja -DGLM_TEST_ENABLE=OFF && ninja && ninja install && cd ..
 
 RUN git clone https://github.com/eigenteam/eigen-git-mirror eigen && mkdir build-eigen && cd build-eigen && cmake ../eigen -GNinja && ninja && ninja install && cd ..
+
+RUN git clone https://github.com/gig2/OpenMesh openmesh --branch add-freebsd-support && \
+mkdir build-openmesh && \
+cd build-openmesh && \
+cmake ../openmesh -DBUILD_APPS=OFF -GNinja && \
+ninja && \
+ninja install && \
+cd .. 
