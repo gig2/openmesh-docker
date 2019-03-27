@@ -5,17 +5,23 @@ MAINTAINER Thibault Payet "mailoo.org"
 # Install.
 RUN apt-get update -q -y
 
-RUN apt-get install -qq -y apt-utils
-RUN apt-get install -qq -y cmake
+RUN apt-get install -q -y python3-software-properties
+RUN apt-get install -q -y software-properties-common
+RUN add-apt-repository --yes ppa:xqms/opencv-nonfree
+
+RUN apt-get update -q -y
+
+RUN apt-get install -q -y apt-utils
+RUN apt-get install -q -y cmake
 RUN apt-get install -q -y git
-RUN apt-get install -qq -y ninja-build
-RUN apt-get install -qq -y build-essential
-RUN apt-get install -qq -y libglew-dev
-RUN apt-get install -qq -y libglm-dev
-RUN apt-get install -qq -y clang
-RUN apt-get install -qq -y meson
-RUN apt-get install -qq -y qtbase5-dev
-RUN apt-get install -qq -y libqt5opengl5-dev
+RUN apt-get install -q -y ninja-build
+RUN apt-get install -q -y build-essential
+RUN apt-get install -q -y libglew-dev
+RUN apt-get install -q -y libglm-dev
+RUN apt-get install -q -y clang
+RUN apt-get install -q -y meson
+RUN apt-get install -q -y qtbase5-dev
+RUN apt-get install -q -y libqt5opengl5-dev
 RUN apt-get install -q -y pkg-config
 RUN apt-get install -q -y doxygen
 RUN apt-get install -q -y graphviz
@@ -28,6 +34,7 @@ RUN apt-get install -q -y libegl1-mesa-dev
 RUN apt-get install -q -y libgles2-mesa-dev
 RUN apt-get install -q -y libopencv-dev
 RUN apt-get install -q -y libopencv-*
+RUN apt-get install -q -y libopencv-nonfree-dev
 RUN apt-get install -q -y gcovr
 
 RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cmake . -GNinja -DGLM_TEST_ENABLE=OFF && ninja && ninja install && cd ..
