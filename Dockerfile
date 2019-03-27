@@ -3,6 +3,8 @@ FROM ubuntu:bionic
 MAINTAINER Thibault Payet "mailoo.org"
 
 # Install.
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update -q -y
 RUN apt-get install -q -y apt-utils
 RUN apt-get install -q -y gnupg
