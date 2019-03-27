@@ -1,5 +1,5 @@
 # Pull base image.
-FROM debian:buster
+FROM ubuntu:bionic
 MAINTAINER Thibault Payet "mailoo.org"
 
 # Install.
