@@ -1,5 +1,6 @@
 # Pull base image.
-FROM debian:buster
+#FROM debian:buster
+FROM debian:xenial
 MAINTAINER Thibault Payet "mailoo.org"
 
 # Install.
