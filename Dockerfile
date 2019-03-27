@@ -4,6 +4,8 @@ MAINTAINER Thibault Payet "mailoo.org"
 
 # Install.
 RUN apt-get update -q -y
+RUN apt-get install -q -y apt-utils
+RUN apt-get install -q -y gnupg
 
 RUN apt-get install -q -y python3-software-properties
 RUN apt-get install -q -y software-properties-common
@@ -11,7 +13,6 @@ RUN add-apt-repository --yes ppa:xqms/opencv-nonfree
 
 RUN apt-get update -q -y
 
-RUN apt-get install -q -y apt-utils
 RUN apt-get install -q -y cmake
 RUN apt-get install -q -y git
 RUN apt-get install -q -y ninja-build
