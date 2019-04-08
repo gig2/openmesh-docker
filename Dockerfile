@@ -16,13 +16,13 @@ RUN add-apt-repository --yes ppa:ignaciovizzo/opencv3-nonfree
 RUN apt-get update -q -y
 
 RUN apt-get install -q -y cmake
-RUN apt-get install -q -y git
+RUN apt-get install -q -y meson
 RUN apt-get install -q -y ninja-build
+RUN apt-get install -q -y git
 RUN apt-get install -q -y build-essential
+RUN apt-get install -q -y clang
 RUN apt-get install -q -y libglew-dev
 RUN apt-get install -q -y libglm-dev
-RUN apt-get install -q -y clang
-RUN apt-get install -q -y meson
 RUN apt-get install -q -y qtbase5-dev
 RUN apt-get install -q -y libqt5opengl5-dev
 RUN apt-get install -q -y pkg-config
