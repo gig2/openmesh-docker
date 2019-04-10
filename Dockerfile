@@ -15,6 +15,8 @@ RUN add-apt-repository --yes ppa:ignaciovizzo/opencv3-nonfree
 
 RUN apt-get update -q -y
 
+RUN apt dist-upgrade -q -y
+
 RUN apt-get install -q -y cmake
 RUN apt-get install -q -y meson
 RUN apt-get install -q -y ninja-build
