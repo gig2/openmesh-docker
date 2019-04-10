@@ -38,6 +38,7 @@ RUN apt-get install -q -y libgles2-mesa-dev
 RUN apt-get install -q -y libopencv-dev
 RUN apt-get install -q -y libopencv-*
 RUN apt-get install -q -y gcovr
+RUN apt-get install -q -y libcgal-dev
 
 RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cmake . -GNinja -DGLM_TEST_ENABLE=OFF && ninja && ninja install && cd ..
 
@@ -50,3 +51,5 @@ cmake ../openmesh -DBUILD_APPS=OFF -GNinja && \
 ninja && \
 ninja install && \
 cd .. 
+
+COPY CGAL.pc /usr/local/libdata/pkgconfig/
