@@ -44,7 +44,7 @@ RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cm
 
 RUN git clone https://github.com/eigenteam/eigen-git-mirror eigen && mkdir build-eigen && cd build-eigen && cmake ../eigen -GNinja && ninja && ninja install && cd ..
 
-RUN git clone https://github.com/gig2/OpenMesh openmesh --branch add-freebsd-support && \
+RUN git clone https://github.com/gig2/OpenMesh openmesh && \
 mkdir build-openmesh && \
 cd build-openmesh && \
 cmake ../openmesh -DBUILD_APPS=OFF -GNinja && \
