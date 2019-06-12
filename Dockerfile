@@ -11,7 +11,6 @@ RUN apt-get install -q -y gnupg
 
 RUN apt-get install -q -y python3-software-properties
 RUN apt-get install -q -y software-properties-common
-RUN add-apt-repository --yes ppa:ignaciovizzo/opencv3-nonfree
 
 RUN apt-get update -q -y
 
