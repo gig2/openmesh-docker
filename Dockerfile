@@ -1,5 +1,5 @@
 # Pull base image.
-FROM ubuntu:bionic
+FROM ubuntu:disco
 MAINTAINER Thibault Payet "mailoo.org"
 
 # Install.
