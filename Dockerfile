@@ -27,6 +27,7 @@ RUN apt-get install -q -y libglm-dev
 RUN apt-get install -q -y qtbase5-dev
 RUN apt-get install -q -y qtchooser
 RUN apt-get install -q -y libqt5opengl5-dev
+RUN apt-get install -q -y qtbase5-dev-tools
 RUN apt-get install -q -y pkg-config
 RUN apt-get install -q -y doxygen
 RUN apt-get install -q -y graphviz
