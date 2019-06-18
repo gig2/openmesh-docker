@@ -57,3 +57,5 @@ ninja install && \
 cd .. 
 
 COPY CGAL.pc /usr/local/libdata/pkgconfig/
+
+RUN ln -s /usr/lib/x86_64-linux-gnu/qt5/bin/uic /usr/bin/uic-qt5
