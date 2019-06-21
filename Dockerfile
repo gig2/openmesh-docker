@@ -18,7 +18,6 @@ RUN apt-get update -q -y
 RUN apt dist-upgrade -q -y
 
 RUN apt-get install -q -y cmake
-RUN apt-get install -q -y meson
 RUN apt-get install -q -y ninja-build
 RUN apt-get install -q -y git
 RUN apt-get install -q -y build-essential
@@ -42,6 +41,8 @@ RUN apt-get install -q -y libopencv-*
 RUN apt-get install -q -y gcovr
 RUN apt-get install -q -y libcgal-dev
 RUN apt-get install -q -y libeigen3-dev
+RUN apt-get install -q -y python3-pip
+RUN pip3 install meson
 
 RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cmake . -GNinja -DGLM_TEST_ENABLE=OFF && ninja && ninja install && cd ..
 
