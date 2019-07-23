@@ -63,7 +63,7 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/qt5/bin/uic /usr/bin/uic-qt5
 RUN git clone https://github.com/STEllAR-GROUP/hpx && \
 cd hpx && git checkout 1.3.0 && cd .. && \
 mkdir build-hpx && cd build-hpx && \
-cmake ../hpx -GNinja && \
+cmake ../hpx -GNinja -DHPX_WITH_MALLOC=system && \
 ninja && \
 ninja install && \
 cd ..
