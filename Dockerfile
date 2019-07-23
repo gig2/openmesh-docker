@@ -58,7 +58,7 @@ cd ..
 
 COPY CGAL.pc /usr/local/libdata/pkgconfig/
 
-RUN git clone https://https://github.com/STEllAR-GROUP/hpx && \
+RUN git clone https://github.com/STEllAR-GROUP/hpx && \
 cd hpx && git checkout 1.3.0 && cd .. && \
 mkdir build-hpx && cd build-hpx && \
 cmake ../hpx -GNinja && \
