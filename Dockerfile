@@ -42,6 +42,8 @@ RUN apt-get install -q -y libopencv-*
 RUN apt-get install -q -y gcovr
 RUN apt-get install -q -y libcgal-dev
 RUN apt-get install -q -y libeigen3-dev
+RUN apt-get install -q -y libhwloc-dev
+RUN apt-get install -q -y hwloc
 
 RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cmake . -GNinja -DGLM_TEST_ENABLE=OFF && ninja && ninja install && cd ..
 
