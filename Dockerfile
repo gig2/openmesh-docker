@@ -25,6 +25,9 @@ RUN dnf -y install hwloc-devel
 RUN dnf -y install hwloc
 RUN dnf -y install hpx-devel
 RUN dnf -y install git
+RUN dnf -y install qt5
+RUN dnf -y install qt5-qtbase-devel
+RUN dnf -y install qtchooser
 
 RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cmake . -GNinja -DGLM_TEST_ENABLE=OFF && ninja && ninja install && cd ..
 
