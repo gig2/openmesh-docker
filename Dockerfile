@@ -67,3 +67,5 @@ cmake ../hpx -GNinja -DHPX_WITH_MALLOC=system && \
 ninja && \
 ninja install && \
 cd ..
+
+RUN apt-get install -q -y libpcl-dev
