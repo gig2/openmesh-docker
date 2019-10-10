@@ -44,3 +44,4 @@ cd ..
 
 COPY CGAL.pc /usr/local/libdata/pkgconfig/
 
+RUN dnf -y install pcl-devel
