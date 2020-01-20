@@ -1,5 +1,5 @@
 # Pull base image.
-FROM fedora:30
+FROM fedora:31
 MAINTAINER Thibault Payet "mailoo.org"
 
 # Install.
@@ -42,6 +42,18 @@ ninja && \
 ninja install && \
 cd .. 
 
-COPY CGAL.pc /usr/local/libdata/pkgconfig/
+COPY CGAL.pc /usr/lib64/pkgconfig/
 
 RUN dnf -y install pcl-devel
+RUN dnf -y install libepoxy-devel
+RUN dnf -y install SDL2-devel
+RUN dnf -y install xerces-c-devel
+
+RUN dnf -y install mingw64-libepoxy
+RUN dnf -y install mingw64-SDL2
+RUN dnf -y install mingw64-boost
+RUN dnf -y install mingw64-binutils
+RUN dnf -y install mingw64-eigen3
+RUN dnf -y install mingw64-gcc
+RUN dnf -y install mingw64-gcc-c++
+RUN dnf -y install mingw64-xerces-c
