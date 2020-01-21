@@ -57,3 +57,33 @@ RUN dnf -y install mingw64-eigen3
 RUN dnf -y install mingw64-gcc
 RUN dnf -y install mingw64-gcc-c++
 RUN dnf -y install mingw64-xerces-c
+
+RUN git clone https://github.com/CGAL/cgal cgal --branch releases/CGAL-4.14.12 && \
+mkdir build-mingw64-cgal && \
+cd build-mingw64-cgal && \
+mingw64-cmake ../cgal -GNinja && \
+ninja && \
+ninja install && \
+cd ..
+
+RUN git clone https://github.com/PointCloudLibrary/pcl pcl --branch pcl-1.9.1 && \
+mkdir build-mingw64-pcl && \
+cd build-mingw64-pcl && \
+mingw64-cmake ../pcl -GNinja && \
+ninja && \
+ninja install && \
+cd ..
+
+RUN git clone https://github.com/open-mpi/hwloc hwloc --branch hwloc-2.0.4 && \
+cd hwloc && \
+mingw64-configure && \
+make && \
+make install
+
+RUN git clone https://github.com/STEllAR-GROUP/hpx hpx --branch 1.3.9 && \
+mkdir build-mingw64-hpx && \
+cd build-mingw64-hpx && \
+mingw64-cmake ../hpx -GNinja && \
+ninja && \
+ninja install && \
+cd ..
