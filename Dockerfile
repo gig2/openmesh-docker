@@ -58,7 +58,7 @@ RUN dnf -y install mingw64-gcc
 RUN dnf -y install mingw64-gcc-c++
 RUN dnf -y install mingw64-xerces-c
 
-RUN git clone https://github.com/CGAL/cgal cgal --branch releases/CGAL-4.14.12 && \
+RUN git clone https://github.com/CGAL/cgal cgal --branch releases/CGAL-4.14.2 && \
 mkdir build-mingw64-cgal && \
 cd build-mingw64-cgal && \
 mingw64-cmake ../cgal -GNinja && \
