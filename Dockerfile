@@ -69,10 +69,10 @@ ninja && \
 ninja install && \
 cd ..
 
-RUN git clone https://github.com/mariusmuja/flann flann --branch 1.8.4
+RUN git clone https://github.com/mariusmuja/flann flann --branch 1.9.1
 
-COPY flann_test_CMakeLists.txt flann/test/CMakeLists.txt
-COPY flann_CMakeLists.txt flann/CMakeLists.txt
+#COPY flann_test_CMakeLists.txt flann/test/CMakeLists.txt
+#COPY flann_CMakeLists.txt flann/CMakeLists.txt
 
 RUN mkdir build-mingw64-flann && \
 cd build-mingw64-flann && \
@@ -84,7 +84,7 @@ cd ..
 RUN git clone https://github.com/PointCloudLibrary/pcl pcl --branch pcl-1.9.1 && \
 mkdir build-mingw64-pcl && \
 cd build-mingw64-pcl && \
-mingw64-cmake ../pcl -GNinja && \
+mingw64-cmake ../pcl -GNinja -DPCL_SHARED_LIBS=TRUE -DWITH_LIBUSB=FALSE -DWITH_VTK=FALSE -DWITH_QT=FALSE && \
 ninja && \
 ninja install && \
 cd ..
