@@ -69,8 +69,11 @@ ninja && \
 ninja install && \
 cd ..
 
-RUN git clone https://github.com/mariusmuja/flann flann --branch 1.8.4 && \
-mkdir build-mingw64-flann && \
+RUN git clone https://github.com/mariusmuja/flann flann --branch 1.8.4
+
+COPY CMakeLists.txt flann/test/
+
+RUN mkdir build-mingw64-flann && \
 cd build-mingw64-flann && \
 mingw64-cmake ../flann -GNinja -DBUILD_PYTHON_BINDINGS=FALSE -DBUILD_MATLAB_BINDINGS=FALSE -DBUILD_EXAMPLES=FALSE -DBUILD_DOC=FALSE -DBUILD_TESTS=FALSE && \
 ninja && \
