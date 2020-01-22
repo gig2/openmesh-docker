@@ -69,6 +69,14 @@ ninja && \
 ninja install && \
 cd ..
 
+RUN git clone https://github.com/mariusmuja/flann flann --branch 1.8.4 && \
+mkdir build-mingw64-flann && \
+cd build-mingw64-flann && \
+mingw64-cmake ../flann -GNinja && \
+ninja && \
+ninja install && \
+cd ..
+
 RUN git clone https://github.com/PointCloudLibrary/pcl pcl --branch pcl-1.9.1 && \
 mkdir build-mingw64-pcl && \
 cd build-mingw64-pcl && \
