@@ -64,7 +64,7 @@ RUN dnf -y install mingw64-mpfr
 RUN git clone https://github.com/CGAL/cgal cgal --branch releases/CGAL-4.14.2 && \
 mkdir build-mingw64-cgal && \
 cd build-mingw64-cgal && \
-mingw64-cmake ../cgal -GNinja && \
+mingw64-cmake ../cgal -GNinja -DWITH_CGAL_QT5=OFF && \
 ninja && \
 ninja install && \
 cd ..
