@@ -71,7 +71,8 @@ cd ..
 
 RUN git clone https://github.com/mariusmuja/flann flann --branch 1.8.4
 
-COPY CMakeLists.txt flann/test/
+COPY flann_test_CMakeLists.txt flann/test/CMakeLists.txt
+COPY flann_CMakeLists.txt flann/CMakeLists.txt
 
 RUN mkdir build-mingw64-flann && \
 cd build-mingw64-flann && \
