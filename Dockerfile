@@ -71,6 +71,8 @@ cd ..
 
 RUN git clone https://github.com/mariusmuja/flann flann --branch 1.9.1
 
+COPY flann_CMakeLists.txt flann/CMakeLists.txt
+
 RUN mkdir build-mingw64-flann && \
 cd build-mingw64-flann && \
 mingw64-cmake ../flann -GNinja -DBUILD_PYTHON_BINDINGS=FALSE -DBUILD_MATLAB_BINDINGS=FALSE -DBUILD_EXAMPLES=FALSE -DBUILD_DOC=FALSE -DBUILD_TESTS=FALSE -DUSE_OPENMP=FALSE && \
