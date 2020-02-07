@@ -48,3 +48,7 @@ RUN dnf -y install pcl-devel
 RUN dnf -y install libepoxy-devel
 RUN dnf -y install SDL2-devel
 RUN dnf -y install xerces-c-devel
+
+RUN dnf -y remove meson
+RUN dnf -y install ninja-build
+RUN pip3 install meson
