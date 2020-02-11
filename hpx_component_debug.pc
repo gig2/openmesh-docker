@@ -1,0 +1,17 @@
+# Copyright (c) 2014 Thomas Heller
+# Copyright (c) 2012 Bryce Adelstein-Lelbach
+#
+# Distributed under the Boost Software License, Version 1.0. (See accompanying
+# file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib64
+includedir=${exec_prefix}/include
+
+Name: hpx_component
+Description: High Performance ParalleX (application configuration) - debug build
+Version: 1.3.0
+Libs: -std=c++17 -shared -L${libdir}  ${libdir}/libhpx_initd.a ${libdir}/libhpxd.so  -latomic -ldl -lrt /usr/lib64/libboost_filesystem.so /usr/lib64/libboost_program_options.so /usr/lib64/libboost_system.so /usr/lib64/libpthread.so /usr/lib64/libboost_filesystem.so /usr/lib64/libboost_program_options.so /usr/lib64/libboost_system.so /usr/lib64/libtcmalloc_minimal.so /usr/lib64/libhwloc.so
+Cflags: -std=c++17 -DHPX_DEBUG -I/usr/include  -I/usr/include -I/usr/include -fPIC -DHPX_COMPONENT_EXPORTS -DHPX_ENABLE_ASSERT_HANDLER
+

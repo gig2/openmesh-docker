@@ -52,3 +52,9 @@ RUN dnf -y install xerces-c-devel
 RUN dnf -y remove meson
 RUN dnf -y install ninja-build
 RUN pip3 install meson
+
+# fixup hpx pc files
+COPY hpx_application.pc         /usr/lib64/pkgconfig
+COPY hpx_application_debug.pc   /usr/lib64/pkgconfig
+COPY hpx_component.pc     /usr/lib64/pkgconfig
+COPY hpx_component_debug.pc     /usr/lib64/pkgconfig
