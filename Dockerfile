@@ -58,3 +58,6 @@ COPY hpx_application.pc         /usr/lib64/pkgconfig
 COPY hpx_application_debug.pc   /usr/lib64/pkgconfig
 COPY hpx_component.pc     /usr/lib64/pkgconfig
 COPY hpx_component_debug.pc     /usr/lib64/pkgconfig
+
+RUN dnf -y install boost-python3
+RUN dnf -y install boost-python3-devel
