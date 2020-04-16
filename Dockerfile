@@ -51,6 +51,8 @@ RUN dnf -y install xerces-c-devel
 
 RUN dnf -y remove meson
 RUN dnf -y install ninja-build
+RUN dnf -y install python3
+RUN dnf -y install python3-pip
 RUN pip install meson
 
 # fixup hpx pc files
@@ -61,3 +63,4 @@ COPY hpx_component_debug.pc     /usr/lib64/pkgconfig
 
 RUN dnf -y install boost-python3
 RUN dnf -y install boost-python3-devel
+
