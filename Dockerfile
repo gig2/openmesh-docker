@@ -64,3 +64,4 @@ COPY hpx_component_debug.pc     /usr/lib64/pkgconfig
 RUN dnf -y install boost-python3
 RUN dnf -y install boost-python3-devel
 
+RUN pip install tensorflow
