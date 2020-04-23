@@ -1,34 +1,33 @@
 # Pull base image.
-FROM fedora:31
+FROM tensorflow/tensorflow:devel-gpu
 MAINTAINER Thibault Payet "mailoo.org"
 
-# Install.
-RUN dnf -y upgrade
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN dnf -y install cmake
-RUN dnf -y install meson
-RUN dnf -y install ninja-build
-RUN dnf -y install gcc
-RUN dnf -y install glew-devel
-RUN dnf -y install glm-devel
-RUN dnf -y install qt5-devel
-RUN dnf -y install pkgconf
-RUN dnf -y install pkgconf-pkg-config
-RUN dnf -y install doxygen
-RUN dnf -y install graphviz
-RUN dnf -y install xorg-x11-server-Xvfb
-RUN dnf -y install opencv-devel
-RUN dnf -y install gcovr
-RUN dnf -y install CGAL-devel
-RUN dnf -y install eigen3-devel
-RUN dnf -y install hwloc-devel
-RUN dnf -y install hwloc
-RUN dnf -y install hpx-devel
-RUN dnf -y install git
-RUN dnf -y install qt5
-RUN dnf -y install qt5-qtbase-devel
-RUN dnf -y install qtchooser
-RUN dnf -y install qt5-*
+RUN apt update -q -y
+RUN apt install -q -y apt-utils
+
+RUN apt install -q -y  cmake \
+  meson \
+  ninja-build \
+  build-essential \
+  libglew-dev \
+  libepoxy-dev \
+  libglm-dev \
+  pkg-config \
+  doxygen \
+  graphviz \
+  libopencv-dev \
+  gcovr \
+  libcgal-dev \
+  libeigen3-dev \
+  libhwloc-dev \
+  hwloc \
+  git \
+  libpcl-dev \
+  libsdl2-dev \
+  libxerces-c-dev \
+  libboost-all-dev
 
 RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cmake . -GNinja -DGLM_TEST_ENABLE=OFF && ninja && ninja install && cd ..
 
@@ -42,25 +41,21 @@ ninja && \
 ninja install && \
 cd .. 
 
-COPY CGAL.pc /usr/lib64/pkgconfig/
+COPY CGAL.pc /usr/local/libdata/pkgconfig/
 
-RUN dnf -y install pcl-devel
-RUN dnf -y install libepoxy-devel
-RUN dnf -y install SDL2-devel
-RUN dnf -y install xerces-c-devel
+RUN git clone https://github.com/STEllAR-GROUP/hpx && \
+cd hpx && git checkout 1.3.0 && cd .. && \
+mkdir build-hpx && cd build-hpx && \
+cmake ../hpx -GNinja -DHPX_WITH_MALLOC=system && \
+ninja && \
+ninja install && \
+cd ..
 
-RUN dnf -y remove meson
-RUN dnf -y install ninja-build
-RUN dnf -y install python3
-RUN dnf -y install python3-pip
-RUN pip install meson
 
 # fixup hpx pc files
-COPY hpx_application.pc         /usr/lib64/pkgconfig
-COPY hpx_application_debug.pc   /usr/lib64/pkgconfig
-COPY hpx_component.pc     /usr/lib64/pkgconfig
-COPY hpx_component_debug.pc     /usr/lib64/pkgconfig
+COPY hpx_application.pc         /usr/local/libdata/pkgconfig
+COPY hpx_application_debug.pc   /usr/local/libdata/pkgconfig
+COPY hpx_component.pc     /usr/local/libdata/pkgconfig
+COPY hpx_component_debug.pc     /usr/local/libdata/pkgconfig
 
-RUN dnf -y install boost-python3
-RUN dnf -y install boost-python3-devel
 
