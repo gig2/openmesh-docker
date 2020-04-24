@@ -1,5 +1,5 @@
 # Pull base image.
-FROM tensorflow/tensorflow:devel-gpu
+FROM ubuntu:focal
 MAINTAINER Thibault Payet "mailoo.org"
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -27,7 +27,8 @@ RUN apt install -q -y  cmake \
   libpcl-dev \
   libsdl2-dev \
   libxerces-c-dev \
-  libboost-all-dev
+  libboost-all-dev \
+  python3-pip
 
 RUN git clone https://github.com/g-truc/glm glm --branch 0.9.9.3 && cd glm && cmake . -GNinja -DGLM_TEST_ENABLE=OFF && ninja && ninja install && cd ..
 
@@ -58,4 +59,5 @@ COPY hpx_application_debug.pc   /usr/local/libdata/pkgconfig
 COPY hpx_component.pc     /usr/local/libdata/pkgconfig
 COPY hpx_component_debug.pc     /usr/local/libdata/pkgconfig
 
+RUN pip install tensorflow
 
