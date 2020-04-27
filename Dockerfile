@@ -59,5 +59,5 @@ COPY hpx_application_debug.pc   /usr/local/libdata/pkgconfig
 COPY hpx_component.pc     /usr/local/libdata/pkgconfig
 COPY hpx_component_debug.pc     /usr/local/libdata/pkgconfig
 
-RUN pip install tensorflow
+RUN pip3 install tensorflow
 
