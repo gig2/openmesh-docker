@@ -24,7 +24,6 @@ RUN dnf -y install hwloc-devel
 RUN dnf -y install hwloc
 RUN dnf -y install hpx-devel
 RUN dnf -y install git
-RUN dnf -y install qt5
 RUN dnf -y install qt5-qtbase-devel
 RUN dnf -y install qtchooser
 RUN dnf -y install qt5-*
