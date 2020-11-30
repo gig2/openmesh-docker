@@ -11,7 +11,6 @@ RUN dnf -y install ninja-build
 RUN dnf -y install gcc
 RUN dnf -y install glew-devel
 RUN dnf -y install glm-devel
-RUN dnf -y install qt5-devel
 RUN dnf -y install pkgconf
 RUN dnf -y install pkgconf-pkg-config
 RUN dnf -y install doxygen
