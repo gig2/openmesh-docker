@@ -42,23 +42,6 @@ ninja && \
 ninja install && \
 cd .. 
 
-COPY CGAL.pc /usr/local/libdata/pkgconfig/
-
-RUN git clone https://github.com/STEllAR-GROUP/hpx && \
-cd hpx && git checkout 1.3.0 && cd .. && \
-mkdir build-hpx && cd build-hpx && \
-cmake ../hpx -GNinja -DHPX_WITH_MALLOC=system && \
-ninja && \
-ninja install && \
-cd ..
-
-
-# fixup hpx pc files
-COPY hpx_application.pc         /usr/local/libdata/pkgconfig
-COPY hpx_application_debug.pc   /usr/local/libdata/pkgconfig
-COPY hpx_component.pc     /usr/local/libdata/pkgconfig
-COPY hpx_component_debug.pc     /usr/local/libdata/pkgconfig
-
 RUN pip3 install tensorflow
 
 RUN apt install -q -y glpk-utils libglpk-dev
