@@ -8,5 +8,5 @@ Description: glpk
 Version: 4.65
 
 Requires: gmp
-Libs: -L${libdir} -lglpk.so
+Libs: -L${libdir} -lglpk
 Cflags: -I${includedir}
