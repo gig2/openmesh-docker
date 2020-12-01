@@ -41,4 +41,6 @@ RUN dnf -y install xerces-c-devel
 RUN dnf -y install boost-python3
 RUN dnf -y install boost-python3-devel
 
+RUN dnf -y install python3-pip
+
 RUN pip install tensorflow
