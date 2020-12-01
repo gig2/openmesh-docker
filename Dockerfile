@@ -43,4 +43,4 @@ RUN dnf -y install boost-python3-devel
 
 RUN dnf -y install python3-pip
 
-RUN pip install tensorflow
+#RUN pip install tensorflow
