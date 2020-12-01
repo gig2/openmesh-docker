@@ -61,5 +61,5 @@ COPY hpx_component_debug.pc     /usr/local/libdata/pkgconfig
 
 RUN pip3 install tensorflow
 
-apt install -q -y glpk-utils libglpk-dev
+RUN apt install -q -y glpk-utils libglpk-dev
 COPY glpk.pc /usr/lib/x86_64-linux-gnu/pkgconfig/
