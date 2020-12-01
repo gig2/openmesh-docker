@@ -44,3 +44,9 @@ RUN dnf -y install boost-python3-devel
 RUN dnf -y install python3-pip
 
 #RUN pip install tensorflow
+
+RUN dnf -y install glpk
+RUN dnf -y install glpk-devel
+
+COPY glpk.pc /usr/lib64/pkgconfig/
+COPY gmp.pc /usr/lib64/pkgconfig/
