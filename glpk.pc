@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: glpk
+Description: glpk
+Version: 4.65
+
+Requires: gmp
+Libs: -L${libdir} -lglpk
+Cflags: -I${includedir}
