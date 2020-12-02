@@ -46,3 +46,5 @@ RUN pip3 install tensorflow
 
 RUN apt install -q -y glpk-utils libglpk-dev
 COPY glpk.pc /usr/lib/x86_64-linux-gnu/pkgconfig/
+
+RUN apt install -q -y coinor-cbc coinor-libcbc-dev
