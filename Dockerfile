@@ -49,4 +49,6 @@ RUN dnf -y install glpk
 RUN dnf -y install glpk-devel
 
 COPY glpk.pc /usr/lib64/pkgconfig/
+
+RUN dnf -y install coin-or-Cbc coin-or-Cbc-devel
 COPY gmp.pc /usr/lib64/pkgconfig/
