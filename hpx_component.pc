@@ -1,0 +1,13 @@
+# Copyright (c) 2018 Christopher Hinz
+# Copyright (c) 2014 Thomas Heller
+# Copyright (c) 2012 Bryce Adelstein-Lelbach
+#
+# SPDX-License-Identifier: BSL-1.0
+# Distributed under the Boost Software License, Version 1.0. (See accompanying
+# file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+
+Name: hpx_component
+Description: High Performance ParalleX (component configuration)
+Version: 1.4.1
+Libs: -shared  /usr//usr/lib64/libhpx.so.1.4.1 -lpthread /usr/lib64/libboost_program_options.so /usr/lib64/libtcmalloc_minimal.so /usr/lib64/libhwloc.so -latomic -ldl -lrt -L/usr//usr/lib64 -L/usr//usr/lib64 -L/usr//usr/lib64 -L/usr//usr/lib64 -L/usr//usr/lib64
+Cflags: -O2  -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -fPIC -DHPX_COMPONENT_EXPORTS -DHPX_ENABLE_ASSERT_HANDLER -DHPX_DISABLE_ASSERTS -DBOOST_DISABLE_ASSERTS -DBOOST_ALL_NO_LIB -std=c++17 -I/usr/include -I/usr/include 
