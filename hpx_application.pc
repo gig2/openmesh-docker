@@ -14,5 +14,5 @@ includedir=${exec_prefix}/include
 Name: hpx_application
 Description: High Performance ParalleX (application configuration)
 Version: 1.4.1
-Libs:  -L${libdir} /usr/lib64/libhpx_wrap.a /usr/lib64/libhpx.so.1.4.1 -lpthread /usr/lib64/libboost_program_options.so /usr/lib64/libtcmalloc_minimal.so /usr/lib64/libhwloc.so -latomic -ldl -lrt -Wl,-wrap=main
+Libs:  -L${libdir} /usr/lib64/libhpx_wrap.a /usr/lib64/libhpx.so -lpthread /usr/lib64/libboost_program_options.so /usr/lib64/libtcmalloc_minimal.so /usr/lib64/libhwloc.so -latomic -ldl -lrt -Wl,-wrap=main
 Cflags: -O2  -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -fPIC -DHPX_APPLICATION_EXPORTS -DHPX_ENABLE_ASSERT_HANDLER -DHPX_DISABLE_ASSERTS -DBOOST_DISABLE_ASSERTS -DHPX_ENABLE_ASSERT_HANDLER -DHPX_DISABLE_ASSERTS -DBOOST_DISABLE_ASSERTS -DBOOST_ALL_NO_LIB -std=c++17 -I${includedir}
