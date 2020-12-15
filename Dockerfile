@@ -50,7 +50,7 @@ COPY glpk.pc /usr/lib/x86_64-linux-gnu/pkgconfig/
 RUN apt install -q -y coinor-cbc coinor-libcbc-dev
 
 RUN git clone https://github.com/STEllAR-GROUP/hpx && \
-cd hpx && git checkout 1.4.1 && cd .. && \
+cd hpx && git checkout 1.3.0 && cd .. && \
 mkdir build-hpx && cd build-hpx && \
 cmake ../hpx -GNinja -DHPX_WITH_MALLOC=system && \
 ninja && \
