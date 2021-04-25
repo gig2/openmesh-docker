@@ -57,3 +57,11 @@ RUN apt install -q -y coinor-cbc coinor-libcbc-dev
 #ninja install && \
 #cd .. && \
 #rm -rf build-hpx
+
+RUN git clone https://github.com/ddemidov/vexcl && \
+mkdir build-vexcl && cd build-vexcl && \
+cmake ../vexcl -GNinja && \
+ninja && \
+ninja install && \
+cd .. && \
+rm -rf build-vexcl
