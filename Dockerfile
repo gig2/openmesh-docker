@@ -62,6 +62,8 @@ RUN dnf -y install pocl-devel
 RUN dnf -y install ocl-icd-devel
 
 RUN git clone https://github.com/ddemidov/vexcl && \
+git config --global user.email "you@example.com" && \
+git config --global user.name  "Your name" && \
 cd vexcl && git checkout 1.4.1 && git cherry-pick 07828a5 && cd .. && \
 mkdir build-vexcl && cd build-vexcl && \
 cmake ../vexcl -GNinja && \
