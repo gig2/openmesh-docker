@@ -58,7 +58,11 @@ RUN apt install -q -y coinor-cbc coinor-libcbc-dev
 #cd .. && \
 #rm -rf build-hpx
 
+RUN apt install -q -y opencl-clhpp-headers opencl-headers \
+  libpocl-dev pocl-opencl-icd
+
 RUN git clone https://github.com/ddemidov/vexcl && \
+cd vexcl && git checkout 1.4.1 && git cherry-pick 07828a5 && cd .. && \
 mkdir build-vexcl && cd build-vexcl && \
 cmake ../vexcl -GNinja && \
 ninja && \
