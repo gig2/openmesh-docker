@@ -55,4 +55,10 @@ COPY gmp.pc /usr/lib64/pkgconfig/
 
 COPY hpx_application.pc /usr/lib64/pkgconfig/
 COPY hpx_component.pc /usr/lib64/pkgconfig/
-
+RUN git clone https://github.com/ddemidov/vexcl && \
+mkdir build-vexcl && cd build-vexcl && \
+cmake ../vexcl -GNinja && \
+ninja && \
+ninja install && \
+cd .. && \
+rm -rf build-vexcl
