@@ -59,6 +59,7 @@ COPY hpx_component.pc /usr/lib64/pkgconfig/
 RUN dnf -y install opencl-headers
 RUN dnf -y install pocl
 RUN dnf -y install pocl-devel
+RUN dnf -y install ocl-icd-devel
 
 RUN git clone https://github.com/ddemidov/vexcl && \
 cd vexcl && git checkout 1.4.1 && git cherry-pick 07828a5 && cd .. && \
