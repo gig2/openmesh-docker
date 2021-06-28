@@ -1,5 +1,5 @@
 # Pull base image.
-FROM ubuntu:focal
+FROM ubuntu:hirsute
 MAINTAINER Thibault Payet "mailoo.org"
 
 ENV DEBIAN_FRONTEND=noninteractive
