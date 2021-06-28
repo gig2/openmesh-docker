@@ -4,7 +4,7 @@ MAINTAINER Thibault Payet "mailoo.org"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt install -q -y gpgv2
+RUN apt install -q -y gpgv
 RUN apt update -q -y
 RUN apt install -q -y apt-utils
 
