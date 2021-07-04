@@ -1,5 +1,5 @@
 # Pull base image.
-FROM fedora:33
+FROM fedora:34
 MAINTAINER Thibault Payet "mailoo.org"
 
 # Install.
