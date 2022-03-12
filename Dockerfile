@@ -71,3 +71,5 @@ ninja && \
 ninja install && \
 cd .. && \
 rm -rf build-vexcl
+
+RUN dnf -y install just
